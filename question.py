@@ -12,7 +12,8 @@ def setupQuestions(cursor):
     result = cursor.fetchall()
     for q in result:
         questions.append(Question(
-            q[1],
-            q[2], q[3], q[4], q[5], 
-            q[6]
+            q[1], #question
+            [q[2], q[3], q[4], q[5]], #possible solutions 
+            q[6] #answer
         ))
+    return questions
